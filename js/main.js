@@ -46,11 +46,15 @@ const speak = ()=>{
         return
     }
     if(textInput.value !==""){
+        //Add background animation
+        body.style.background = 'url(img/wave.gif)'
+
         //Get speak text
         const speakText = new SpeechSynthesisUtterance(textInput.value)
         
         //Speak end
         speakText.onend = (e)=>{
+            body.style.background=''
             console.log("Done Speaking")
         }
 
